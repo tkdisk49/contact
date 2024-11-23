@@ -1,5 +1,5 @@
     <div>
-        <button wire:click="openModal({{ $contact->id }})" type="button" class="detail">詳細</button>
+        <button wire:click="openModal()" type="button" class="detail">詳細</button>
     </div>
     @if($showModal)
     <div class="modal-content">
