@@ -43,11 +43,11 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--radio">
-                    <input type="radio" id="male" name="gender" value="1" checked />
+                    <input class="visually-hidden" type="radio" id="male" name="gender" value="1" checked />
                     <label for="men" value="男性">男性</label>
-                    <input type="radio" id="female" name="gender" value="2" />
+                    <input class="visually-hidden" type="radio" id="female" name="gender" value="2" />
                     <label for="female" value="女性">女性</label>
-                    <input type="radio" id="other" name="gender" value="3" />
+                    <input class="visually-hidden" type="radio" id="other" name="gender" value="3" />
                     <label for="other" value="その他">その他</label>
                 </div>
                 <div class="form__error">
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="form__group">
-            <div class="form__group-title">
+            <div class="form__group-title building">
                 <span class="form__label--item">建物名</span>
             </div>
             <div class="form__group-content">
@@ -169,7 +169,7 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">送信</button>
+            <button class="form__button-submit" type="submit">確認画面</button>
         </div>
     </form>
 </div>

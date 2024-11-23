@@ -25,13 +25,15 @@
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
                         <input type="hidden" name="gender" value="{{ $contact['gender'] }}" readonly />
-                        @if($contact['gender'] == '1')
-                        男性
-                        @elseif($contact['gender'] == '2')
-                        女性
-                        @else
-                        その他
-                        @endif
+                        <span>
+                            @if($contact['gender'] == '1')
+                            男性
+                            @elseif($contact['gender'] == '2')
+                            女性
+                            @else
+                            その他
+                            @endif
+                        </span>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -65,23 +67,25 @@
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
                         <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" readonly />
-                        @if($contact['category_id'] == '1')
-                        商品のお届けについて
-                        @elseif($contact['category_id'] == '2')
-                        商品の交換について
-                        @elseif($contact['category_id'] == '3')
-                        商品トラブル
-                        @elseif($contact['category_id'] == '4')
-                        ショップへのお問い合わせ
-                        @else
-                        その他
-                        @endif
+                        <span>
+                            @if($contact['category_id'] == '1')
+                            商品のお届けについて
+                            @elseif($contact['category_id'] == '2')
+                            商品の交換について
+                            @elseif($contact['category_id'] == '3')
+                            商品トラブル
+                            @elseif($contact['category_id'] == '4')
+                            ショップへのお問い合わせ
+                            @else
+                            その他
+                            @endif
+                        </span>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
-                    <th class="confirm-table__header">お問い合わせ内容</th>
+                    <th class="confirm-table__header detail">お問い合わせ内容</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="detail" value="{{ $contact['detail'] }}" readonly />
+                        <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ $contact['detail'] }}</textarea>
                     </td>
                 </tr>
             </table>

@@ -1,0 +1,100 @@
+.confirm__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 100%;
+}
+
+.confirm__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.confirm__heading h2 {
+    color: #8B7969;
+    font-size: 35px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.confirm-table {
+    border: 1px solid #E0DFDE;
+}
+
+.confirm-table__inner {
+    width: 100%;
+}
+
+.confirm-table__header {
+    padding: 15px 50px;
+    width: 305px;
+    height: 70px;
+    border-bottom: 1px solid #E0DFDE;
+    background-color: #BAA899;
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+
+}
+
+.confirm-table__text {
+    padding: 15px 30px;
+    border-bottom: 1px solid #E0DFDE;
+}
+
+.confirm-table__text span {
+    color: #8B7969;
+    font-size: 20px;
+}
+
+.confirm-table__text input {
+    color: #8B7969;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.detail {
+    height: 120px;
+}
+
+.confirm-table__text textarea {
+    height: 100%;
+    color: #8B7969;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px 40px;
+    width: 120px;
+    height: 42px;
+    border: none;
+    background: #82756A;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.form__button-correct {
+    padding: 10px 40px;
+    width: 120px;
+    height: 42px;
+    border: none;
+    background: #fff;
+    color: #82756A;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #82756A;
+}

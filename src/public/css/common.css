@@ -10,15 +10,21 @@ body {
     font-style: normal;
 } */
 
+.header {
+    height: 100px;
+}
+
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
+    height: 100%;
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #E0DFDE;
 }
 
 .header__logo {
+    margin: 0 auto;
     color: #8B7969;
     font-size: 40px;
 }

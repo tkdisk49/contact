@@ -1,0 +1,47 @@
+.thanks__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 100%;
+}
+
+.thanks__heading {
+    text-align: center;
+    position: relative;
+}
+
+.thanks__heading h2 {
+    font-size: 280px;
+    color: rgba(139, 121, 105, 0.05);
+}
+
+.thanks__group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.thanks__group-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.thanks__group-title h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #8B7969;
+}
+
+.thanks__group-link {
+    text-align: center;
+}
+
+.thanks__group-link a {
+    padding: 10px 40px;
+    width: 140px;
+    height: 46px;
+    background: #82756A;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
