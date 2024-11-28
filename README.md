@@ -15,6 +15,8 @@
         4. php artisan key:generate
         5. php artisan migrate
         6. php artisan db:seed
+        7. DatabaseSeeder.phpのコメントアウトされたコードを変更し、再度php artisan db:seedを実行
+        8. composer require livewire/livewire
 
 ## 使用技術（実行環境）
 

@@ -14,7 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // ファクトリとシーダーを同時に使用してシーディングするとエラーが起きるので、片方をコメントアウトして2回シーディングする
+        
         Contact::factory(35)->create();
+
         // $this->call(CategoriesTableSeeder::class);
     }
 }
