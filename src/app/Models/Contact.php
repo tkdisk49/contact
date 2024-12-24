@@ -36,7 +36,12 @@ class Contact extends Model
     public function scopeKeywordSearch($query, $keyword)
     {
         if (!empty($keyword)) {
-            $query->where('last_name', 'like', '%' . $keyword . '%')->orWhere('last_name', '=', $keyword)->orWhere('first_name', 'like', '%' . $keyword . '%')->orWhere('first_name', '=', $keyword)->orWhere('email', 'like', '%' . $keyword . '%')->orWhere('email', '=', $keyword);
+            $query->where('last_name', 'like', '%' . $keyword . '%')
+            ->orWhere('last_name', '=', $keyword)
+            ->orWhere('first_name', 'like', '%' . $keyword . '%')
+            ->orWhere('first_name', '=', $keyword)
+            ->orWhere('email', 'like', '%' . $keyword . '%')
+            ->orWhere('email', '=', $keyword);
         }
     }
 
