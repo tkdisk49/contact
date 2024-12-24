@@ -47,7 +47,7 @@ DB_PASSWORD=laravel_pass
 
 ## ER 図
 
-![alt](https://github.com/user-attachments/assets/6c44f7d1-032a-408d-8dda-1994d622eab7)
+![alt](index.drawio.png)
 
 ## URL
 
