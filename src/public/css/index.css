@@ -18,6 +18,7 @@
     margin: 0 auto;
     width: 70%;
     text-align: center;
+    color: #8b7969;
 }
 
 .form__group {
@@ -169,7 +170,7 @@ input:checked+label::after {
     opacity: 1;
 }
 
-.visually-hidden {
+.input-gender {
     position: absolute;
     white-space: nowrap;
     border: 0;
