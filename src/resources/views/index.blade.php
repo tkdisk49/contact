@@ -43,12 +43,12 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--radio">
-                    <input class="visually-hidden" type="radio" id="male" name="gender" value="1" checked />
-                    <label for="men" value="男性">男性</label>
-                    <input class="visually-hidden" type="radio" id="female" name="gender" value="2" />
-                    <label for="female" value="女性">女性</label>
-                    <input class="visually-hidden" type="radio" id="other" name="gender" value="3" />
-                    <label for="other" value="その他">その他</label>
+                        <input class="input-gender" type="radio" id="male" name="gender" value="1" {{ old('gender')==1 || old('gender')==null ? 'checked' : '' }} />
+                        <label class="gender-label" for="men" value="男性">男性</label>
+                        <input class="input-gender" type="radio" id="female" name="gender" value="2" {{ old('gender')==2 ? 'checked' : '' }} />
+                        <label class="gender-label" for="female" value="女性">女性</label>
+                        <input class="input-gender" type="radio" id="other" name="gender" value="3" {{ old('gender')==3 ? 'checked' : '' }} />
+                        <label class="gender-label" for="other" value="その他">その他</label>
                 </div>
                 <div class="form__error">
                     @error('gender')
@@ -93,15 +93,13 @@
                     </div>
                 </div>
                 <div class="form__error">
-                    @error('first_tel')
-                    {{ $message }}
-                    @enderror
-                    @error('second_tel')
-                    {{ $message }}
-                    @enderror
-                    @error('third_tel')
-                    {{ $message }}
-                    @enderror
+                    @if($errors->has('first_tel'))
+                    {{ $errors->first('first_tel') }}
+                    @elseif($errors->has('second_tel'))
+                    {{ $errors->first('second_tel') }}
+                    @else
+                    {{ $errors->first('third_tel') }}
+                    @endif
                 </div>
             </div>
         </div>
@@ -139,9 +137,9 @@
             <div class="form__group-content">
                 <div class="form__input--select">
                     <select class="form__select--category" name="category_id">
-                        <option value="">選択してください</option>
+                        <option hidden>選択してください</option>
                         @foreach($categories as $category)
-                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                        <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>{{ $category->content }}</option>
                         @endforeach
                     </select>
                 </div>

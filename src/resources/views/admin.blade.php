@@ -77,7 +77,7 @@
                     <button class="export__button">エクスポート</button>
                 </div>
                 <div class="admin-item__paginate">
-                    {{ $contacts->links() }}
+                    {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
                 </div>
             </div>
             <div class="admin-table">
