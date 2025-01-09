@@ -44,11 +44,11 @@
             <form class="search-form" action="/admin/search" method="get">
                 @csrf
                 <div class="form__input--keyword">
-                    <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
+                    <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
                 </div>
                 <div class="form__input--gender">
                     <select name="gender">
-                        <option value="">性別</option>
+                        <option disabled selected>性別</option>
                         @foreach($sex as $key => $value)
                         <option value="{{ $value }}">{{ $key }}</option>
                         @endforeach
@@ -56,14 +56,14 @@
                 </div>
                 <div class="form__input--category">
                     <select name="category_id">
-                        <option value="">お問い合わせの種類</option>
+                        <option disabled selected>お問い合わせの種類</option>
                         @foreach($categories as $category)
-                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                        <option value="{{ $category->id }}" @if (request('category_id')==$category->id) selected @endif>{{ $category->content }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form__input--date">
-                    <input type="date" name="date">
+                    <input type="date" name="date" value="{{ request('date') }}">
                 </div>
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">検索</button>
@@ -91,7 +91,7 @@
                     @foreach($contacts as $contact)
                     <tr class="admin-table__row">
                         <td class="admin-table__name">
-                            {{ $contact['last_name'] }}
+                            {{ $contact->last_name }}
                             <span class="space"></span>
                             <span class="first-name">{{ $contact->first_name }}</span>
                         </td>
@@ -106,10 +106,10 @@
                             @endif
                         </td>
                         <td class="admin-table__email">
-                            {{ $contact['email'] }}
+                            {{ $contact->email }}
                         </td>
                         <td class="admin-table__category">
-                            {{ $contact['category']['content'] }}
+                            {{ $contact->category->content }}
                         </td>
                         <td class="admin-table__detail">
                             @livewire('admin')
