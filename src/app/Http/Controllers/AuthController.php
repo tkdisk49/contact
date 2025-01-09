@@ -6,7 +6,6 @@ use App\Http\Requests\AuthRequest;
 use App\Models\Contact;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
 
 class AuthController extends Controller
 {
@@ -20,9 +19,38 @@ class AuthController extends Controller
 
     public function search(Request $request)
     {
-        $contacts = Contact::with('category')->KeywordSearch($request->keyword)->GenderSearch($request->gender)->CategorySearch($request->category_id)->DateSearch($request->date)->paginate(7);
+        $query = Contact::query();
+
+        $query = $this->getSearchQuery($request, $query);
+
+        $contacts = $query->paginate(7);
         $categories = Category::all();
 
         return view('admin', compact('contacts', 'categories'));
+    }
+
+    private function getSearchQuery($request, $query)
+    {
+        if (!empty($request->keyword)) {
+            $query->where(function ($q) use ($request) {
+                $q->where('first_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            });
+        }
+
+        if (!empty($request->gender)) {
+            $query->where('gender', '=', $request->gender);
+        }
+
+        if (!empty($request->category_id)) {
+            $query->where('category_id', '=', $request->category_id);
+        }
+
+        if (!empty($request->date)) {
+            $query->whereDate('created_at', '=', $request->date);
+        }
+
+        return $query;
     }
 }
